@@ -152,7 +152,7 @@ if [[ -z "$_PBENCH_BENCH_TESTS" ]]; then
 	    local this_version=""
         fi
 
-        local rpm_status=`rpm --query ${this_rpm}$this_version`
+        local rpm_status=`rpm --query ${this_rpm}-$this_version`
         local rc=0
         if echo $rpm_status | grep -q "is not installed"; then
 	    debug_log "[check_install_rpm] attempting to install ${this_rpm}$this_version"
